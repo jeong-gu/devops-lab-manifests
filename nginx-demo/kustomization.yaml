@@ -13,4 +13,4 @@ resources:
   - ingress.yaml
 images:
   - name: nginxinc/nginx-unprivileged  # deployment.yaml 에 적힌 이름
-    newTag: 1.27-alpine               # 1.28-alpine 으로 바꾸고 commit 해 본다
+    newTag: 1.28-alpine               # 1.28-alpine 으로 바꾸고 commit 해 본다
