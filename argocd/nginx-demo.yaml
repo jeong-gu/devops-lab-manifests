@@ -1,0 +1,20 @@
+# 6장 연습용 Application. 광주 Argo CD 에 반 계정으로 등록한다.
+#   argocd app create -f argocd/nginx-demo.yaml --grpc-web
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: g015-nginx-demo
+  namespace: argocd
+spec:
+  project: skala-gj1
+  source:
+    repoURL: https://github.com/jeong-gu/devops-lab-manifests.git
+    targetRevision: main
+    path: nginx-demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: skala-gj1
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
